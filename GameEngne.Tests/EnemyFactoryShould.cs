@@ -48,15 +48,101 @@ namespace GameEngne.Tests
             EnemyCreationException ex = Assert.ThrowsException<EnemyCreationException>(() => sut.Create(enemyName, isBoss: true));
 
 
-            Console.WriteLine("OnlyAllowKingOrQueenBossEnemies");
-            Console.WriteLine("Typeof ex:");
-            Console.WriteLine(ex.GetType().Name);
-
-
             Assert.AreEqual(enemyName, ex.RequestedEnemyName);
 
         }
 
+
+        // 08/26/2021 12:43 pm - SSN - [20210826-1241] - [001] - M03-10 - Asserting object types and references
+        [TestMethod]
+        public void CreateNormalEnemyByDefault()
+        {
+
+            // Arrange
+
+            var sut = new EnemyFactory();
+
+            var enemy = sut.Create("Zombie");
+
+
+            // Act
+
+
+            // Assert
+
+            Assert.IsInstanceOfType(enemy, typeof(NormalEnemy));
+
+        }
+
+
+        // 08/26/2021 12:48 pm - SSN - [20210826-1241] - [002] - M03-10 - Asserting object types and references
+        [TestMethod]
+        public void CreateNormalEnemyByDefault_NotTypeExample()
+        {
+
+            // Arrange
+
+            var sut = new EnemyFactory();
+
+            var enemy = sut.Create("Zombie");
+
+
+            // Act
+
+
+            // Assert
+
+            Assert.IsNotInstanceOfType(enemy, typeof(BossEnemy));
+
+        }
+
+
+        // 08/26/2021 12:50 pm - SSN - [20210826-1241] - [003] - M03-10 - Asserting object types and references
+        [TestMethod]
+        public void CrateBossEnemy()
+        {
+
+            // Arrange
+
+            var sut = new EnemyFactory();
+            Enemy enemy = sut.Create("Zombie King", isBoss: true);
+
+            // Act
+
+
+            // Assert
+
+            Assert.IsInstanceOfType(enemy, typeof(BossEnemy));
+
+        }
+
+
+        // 08/26/2021 12:54 pm - SSN - [20210826-1241] - [004] - M03-10 - Asserting object types and references
+        [TestMethod]
+        public void CreateSeparateInstances()
+        {
+
+            // Arrange
+
+            EnemyFactory sut = new EnemyFactory();
+
+            Enemy enemy1 = sut.Create("Zombie");
+            Enemy enemy2 = sut.Create("Zombie");
+
+            Enemy enemy3 = enemy1;
+
+            // Act
+
+
+            // Assert
+
+            Assert.AreNotSame(enemy1, enemy2);
+            Assert.AreNotEqual(enemy1, enemy2);
+
+            Assert.AreSame(enemy1, enemy3);
+            Assert.AreEqual(enemy1, enemy3);
+
+        }
     }
 }
 
