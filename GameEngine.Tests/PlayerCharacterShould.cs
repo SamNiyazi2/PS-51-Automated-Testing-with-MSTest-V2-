@@ -1,5 +1,7 @@
 using GameEngine;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -82,13 +84,43 @@ namespace GameEngine.Tests
         }
 
 
+        // 08/26/2021 06:08 pm - SSN - [20210826-1806] - [001] - M05-04 - Sharing test data across multiple tests
+        //public static IEnumerable<object[]> Damages_SampleData
+        //{
+        //    get
+        //    {
+        //        return new List<object[]>{
+        //            new object[] { 1,99},
+        //            new object[] { 0,100},
+        //            new object[] { 100,1},
+        //            new object[] { 101,1},
+        //            new object[] { 50,50}
+        //        };
+        //    }
+        //}
+
+        //public static IEnumerable<object[]> Damages_SampleData_v2()
+        //{
+        //        return new List<object[]>{
+        //            new object[] { 1,99},
+        //            new object[] { 0,100},
+        //            new object[] { 100,1},
+        //            new object[] { 101,1},
+        //            new object[] { 50,50},
+        //            new object[] { 52,48}
+        //        };
+        //}
+
         // 08/26/2021 05:46 pm - SSN - [20210826-1744] - [001] - M05-03 - Specifying test data at the test method level
         [DataTestMethod]
-        [DataRow(1,99)]
-        [DataRow(0,100)]
-        [DataRow(100,1)]
-        [DataRow(101,1)]
-        [DataRow(50,50)]
+        //[DataRow(1, 99)]
+        //[DataRow(0, 100)]
+        //[DataRow(100, 1)]
+        //[DataRow(101, 1)]
+        //[DataRow(50, 50)]
+        // [DynamicData(nameof(Damages_SampleData))]
+        // [DynamicData(nameof(Damages_SampleData_v2),DynamicDataSourceType.Method)]
+        [DynamicData(nameof(DamageTestData.GetTestData), typeof(DamageTestData), DynamicDataSourceType.Method)]
         [TestCategory("Player health")]
         public void TakeDamage_v2(int damage, int expectedResult)
         {
