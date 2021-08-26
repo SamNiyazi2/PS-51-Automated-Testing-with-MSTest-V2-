@@ -17,7 +17,7 @@ namespace GameEngine.Tests
         {
 
             // Arrange
-
+            Console.WriteLine("Creating EnemyFactory");
             var sut = new EnemyFactory();
 
             // Act

@@ -33,17 +33,17 @@ namespace GameEngine.Tests
 
             // Assert
             // Testing minimum applicable value for delta
-            if ( false)
+            if (false)
             {
 
-            double testDelta = delta - 0.0001;
+                double testDelta = delta - 0.0001;
 
-            while (testDelta > 0.00001)
-            {
-                testCount++;
-                Assert.AreEqual(expectedResult, sut.SpecialAttackPower, testDelta, $"Error 2 testDelta : [{testDelta }] testCount: [{testCount}]");
-                testDelta -= 0.0001;
-            }
+                while (testDelta > 0.00001)
+                {
+                    testCount++;
+                    Assert.AreEqual(expectedResult, sut.SpecialAttackPower, testDelta, $"Error 2 testDelta : [{testDelta }] testCount: [{testCount}]");
+                    testDelta -= 0.0001;
+                }
             }
 
             Assert.AreEqual(expectedResult, sut.SpecialAttackPower, delta, $"Error 3 ");
