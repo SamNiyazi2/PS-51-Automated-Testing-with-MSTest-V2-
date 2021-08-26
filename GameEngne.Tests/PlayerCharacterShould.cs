@@ -18,6 +18,14 @@ namespace GameEngne.Tests
 
         }
 
+        [TestMethod]
+        public void NotHaveNickNameyDefault()
+        {
 
+            var sut = new PlayerCharacter();
+
+            Assert.IsNull(sut.Nickname);
+
+        }
     }
 }
