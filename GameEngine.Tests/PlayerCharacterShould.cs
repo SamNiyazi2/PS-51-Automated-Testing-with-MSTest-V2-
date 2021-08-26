@@ -12,6 +12,7 @@ namespace GameEngine.Tests
     {
         [TestMethod]
         [TestCategory("Player defaults")]
+        // [Ignore("Testing Ignore attribute")]
         public void BeExperiencedWhenNew()
         {
 
@@ -23,6 +24,7 @@ namespace GameEngine.Tests
 
         [TestMethod]
         [TestCategory("Player defaults")]
+        // [Ignore("Testing Ignore attribute")]
         public void NotHaveNickNameyDefault()
         {
 
@@ -195,7 +197,7 @@ namespace GameEngine.Tests
 
         }
 
-        
+
         // 08/26/2021 11:41 am - SSN - [20210826-1100] - [003] - M03-06 - Asserting simple string equality
 
         [TestMethod]
@@ -260,7 +262,7 @@ namespace GameEngine.Tests
             // Assert
 
             CollectionAssert.Contains(sut.Weapons, "Long Bow");
-            
+
         }
 
 
@@ -371,7 +373,7 @@ namespace GameEngine.Tests
 
             // Assert
 
-            Assert.IsFalse(sut.Weapons.Any(weapon=>string.IsNullOrWhiteSpace(weapon)));
+            Assert.IsFalse(sut.Weapons.Any(weapon => string.IsNullOrWhiteSpace(weapon)));
 
         }
 
