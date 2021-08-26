@@ -1,5 +1,6 @@
 using GameEngine;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 // 08/26/2021 08:51 am - SSN - [20210826-0850] - [001] - M02-05 - Creating a new test project
@@ -234,5 +235,140 @@ namespace GameEngne.Tests
             StringAssert.Matches(sut.FullName, new Regex("[A-Z]{1}[a-z]+ [A-Z]{1}[a-z]+"));
 
         }
+
+
+        // 08/26/2021 11:51 am - SSN - [20210826-1149] - [001] - M03-07 - Specialized string assertions
+        [TestMethod]
+        public void HaveALongBow()
+        {
+
+
+            // Arrange
+
+            var sut = new PlayerCharacter();
+
+
+            // Act
+
+
+            // Assert
+
+            CollectionAssert.Contains(sut.Weapons, "Long Bow");
+            
+        }
+
+
+        // 08/26/2021 11:53 am - SSN - [20210826-1149] - [002] - M03-07 - Specialized string assertions
+        [TestMethod]
+        public void HaveAllExpectedWeapons()
+        {
+
+            // Arrange
+
+            var sut = new PlayerCharacter();
+
+            var expectedWeapons = new[]
+            {
+                "Long Bow",
+                "Short Bow",
+                "Short Sword",
+            };
+
+            // Act
+
+
+            // Assert
+            // Must match order.
+            CollectionAssert.AreEqual(expectedWeapons, sut.Weapons);
+
+        }
+
+
+        // 08/26/2021 12:01 pm - SSN - [20210826-1149] - [003] - M03-07 - Specialized string assertions
+        [TestMethod]
+        public void HaveAllExpectedWeapons_AnyOrder()
+        {
+
+            // Arrange
+
+            var sut = new PlayerCharacter();
+
+            var expectedWeapons = new[]
+            {
+                "Short Bow",
+                "Long Bow",
+                "Short Sword",
+            };
+
+
+            // Act
+
+
+            // Assert
+
+            CollectionAssert.AreEquivalent(expectedWeapons, sut.Weapons);
+
+        }
+
+
+
+        // 08/26/2021 12:03 pm - SSN - [20210826-1149] - [004] - M03-07 - Specialized string assertions
+
+        [TestMethod]
+        public void HaveNoDuplicateWeapons()
+        {
+
+            // Arrange
+
+            var sut = new PlayerCharacter();
+
+
+            // Act
+
+
+            // Assert
+
+            CollectionAssert.AllItemsAreUnique(sut.Weapons);
+        }
+
+
+        // 08/26/2021 12:06 pm - SSN - [20210826-1149] - [005] - M03-07 - Specialized string assertions
+        [TestMethod]
+        public void HaveAtLeastOneKindOfSword()
+        {
+
+            // Arrange
+
+            var sut = new PlayerCharacter();
+
+            // Act
+
+
+            // Assert
+
+            Assert.IsTrue(sut.Weapons.Any(weapon => weapon.ToLower().Contains("sword")));
+
+        }
+
+
+        // 08/26/2021 12:08 pm - SSN - [20210826-1149] - [006] - M03-07 - Specialized string assertions
+        [TestMethod]
+        public void HaveNoEmptyDefaultWeapons()
+        {
+
+            // Arrange
+
+            var sut = new PlayerCharacter();
+
+            // Act
+
+
+            // Assert
+
+            Assert.IsFalse(sut.Weapons.Any(weapon=>string.IsNullOrWhiteSpace(weapon)));
+
+        }
+
     }
+
 }
