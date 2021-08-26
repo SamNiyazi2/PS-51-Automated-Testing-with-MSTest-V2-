@@ -1,3 +1,4 @@
+using GameEngine;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 // 08/26/2021 08:51 am - SSN - [20210826-0850] - [001] - M02-05 - Creating a new test project
@@ -5,11 +6,18 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace GameEngne.Tests
 {
     [TestClass]
-    public class UnitTest1
+    public class PlayerCharacterShould
     {
         [TestMethod]
-        public void TestMethod1()
+        public void BeExperiencedWhenNew()
         {
+
+            var sut = new PlayerCharacter();
+
+            Assert.IsTrue(sut.IsNoob);
+
         }
+
+
     }
 }
