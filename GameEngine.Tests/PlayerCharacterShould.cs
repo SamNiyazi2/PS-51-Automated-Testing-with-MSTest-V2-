@@ -120,7 +120,8 @@ namespace GameEngine.Tests
         //[DataRow(50, 50)]
         // [DynamicData(nameof(Damages_SampleData))]
         // [DynamicData(nameof(Damages_SampleData_v2),DynamicDataSourceType.Method)]
-        [DynamicData(nameof(DamageTestData.GetTestData), typeof(DamageTestData), DynamicDataSourceType.Method)]
+        // [DynamicData(nameof(DamageTestData.GetTestData), typeof(DamageTestData), DynamicDataSourceType.Method)]
+        [DynamicData(nameof(ExternalHealthDamageTestData.GetTestData), typeof(ExternalHealthDamageTestData))]
         [TestCategory("Player health")]
         public void TakeDamage_v2(int damage, int expectedResult)
         {
