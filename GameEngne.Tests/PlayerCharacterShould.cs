@@ -1,5 +1,6 @@
 using GameEngine;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Text.RegularExpressions;
 
 // 08/26/2021 08:51 am - SSN - [20210826-0850] - [001] - M02-05 - Creating a new test project
 
@@ -134,5 +135,104 @@ namespace GameEngne.Tests
         }
 
 
+
+        // 08/26/2021 11:33 am - SSN - [20210826-1100] - [001] - M03-06 - Asserting simple string equality
+
+        [TestMethod]
+        public void CalculateFullName()
+        {
+
+            // Arrange
+
+            var sut = new PlayerCharacter();
+
+            sut.FirstName = "Sarah";
+            sut.LastName = "Smith";
+
+            string expectedResults = sut.FirstName + " " + sut.LastName;
+
+
+
+            // Act
+
+
+            // Assert
+
+
+            Assert.AreEqual(expectedResults, sut.FullName);
+
+            Assert.AreEqual(expectedResults.ToUpper(), sut.FullName, true);
+
+        }
+
+
+        // 08/26/2021 11:39 am - SSN - [20210826-1100] - [002] - M03-06 - Asserting simple string equality
+
+        [TestMethod]
+        public void HaveFullNameStartingWithFirstName()
+        {
+
+            // Arrange
+
+            var sut = new PlayerCharacter();
+            sut.FirstName = "Sarah";
+            sut.LastName = "Smith";
+
+
+            // Act
+
+
+            // Assert
+
+            StringAssert.StartsWith(sut.FullName, sut.FirstName);
+
+        }
+
+        
+        // 08/26/2021 11:41 am - SSN - [20210826-1100] - [003] - M03-06 - Asserting simple string equality
+
+        [TestMethod]
+        public void HaveFullNameEndingWithLastName()
+        {
+
+            // Arrange
+
+            var sut = new PlayerCharacter();
+            sut.FirstName = "Sarah";
+            sut.LastName = "Smith";
+
+
+            // Act
+
+
+            // Assert
+
+            StringAssert.EndsWith(sut.FullName, sut.LastName);
+
+        }
+
+
+        // 08/26/2021 11:43 am - SSN - [20210826-1100] - [004] - M03-06 - Asserting simple string equality
+
+        [TestMethod]
+        public void CalculateFullNameWithTitleCase()
+        {
+
+
+            // Arrange
+
+            var sut = new PlayerCharacter();
+
+            sut.FirstName = "Sarah";
+            sut.LastName = "Smith";
+
+            // Act
+
+
+            // Assert
+
+            StringAssert.Matches(sut.FullName, new Regex("[A-Z]{1}[a-z]+ [A-Z]{1}[a-z]+"));
+
+        }
     }
 }
