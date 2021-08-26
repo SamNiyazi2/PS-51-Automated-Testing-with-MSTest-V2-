@@ -11,6 +11,7 @@ namespace GameEngne.Tests
     public class PlayerCharacterShould
     {
         [TestMethod]
+        [TestCategory("Player defaults")]
         public void BeExperiencedWhenNew()
         {
 
@@ -21,6 +22,7 @@ namespace GameEngne.Tests
         }
 
         [TestMethod]
+        [TestCategory("Player defaults")]
         public void NotHaveNickNameyDefault()
         {
 
@@ -33,6 +35,7 @@ namespace GameEngne.Tests
 
         // 08/26/2021 09:26 am - SSN - [20210826-0925] - [001] - M03-04 - Asserting numeric results
         [TestMethod]
+        [TestCategory("Player defaults")]
         public void StartWithDefaultHealth()
         {
 
@@ -55,6 +58,7 @@ namespace GameEngne.Tests
         // 08/26/2021 09:32 am - SSN - [20210826-0925] - [002] - M03-04 - Asserting numeric results
 
         [TestMethod]
+        [TestCategory("Player health")]
         public void TakeDamage()
         {
 
@@ -78,6 +82,7 @@ namespace GameEngne.Tests
 
         // 08/26/2021 09:37 am - SSN - [20210826-0925] - [003] - M03-04 - Asserting numeric results
         [TestMethod]
+        [TestCategory("Player health")]
         public void TakeDamage_NotEqual()
         {
 
@@ -102,6 +107,7 @@ namespace GameEngne.Tests
         // 08/26/2021 09:44 am - SSN - [20210826-0925] - [004] - M03-04 - Asserting numeric results
 
         [TestMethod]
+        [TestCategory("Player health")]
         public void IncreaseHealthAfterSleeping()
         {
 

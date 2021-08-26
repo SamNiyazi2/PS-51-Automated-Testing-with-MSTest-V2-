@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace GameEngne.Tests
 {
     [TestClass]
+    [TestCategory("Enemy creation")]
     public class EnemyFactoryShould
     {
 
