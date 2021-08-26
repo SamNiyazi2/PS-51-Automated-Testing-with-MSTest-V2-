@@ -61,7 +61,7 @@ namespace GameEngine.Tests
 
         [TestMethod]
         [TestCategory("Player health")]
-        public void TakeDamage()
+        public void TakeDamage_v1()
         {
 
             // Arrange
@@ -80,6 +80,36 @@ namespace GameEngine.Tests
             Assert.AreEqual(expectedResults, sut.Health);
 
         }
+
+
+        // 08/26/2021 05:46 pm - SSN - [20210826-1744] - [001] - M05-03 - Specifying test data at the test method level
+        [DataTestMethod]
+        [DataRow(1,99)]
+        [DataRow(0,100)]
+        [DataRow(100,1)]
+        [DataRow(101,1)]
+        [DataRow(50,50)]
+        [TestCategory("Player health")]
+        public void TakeDamage_v2(int damage, int expectedResult)
+        {
+
+            // Arrange
+
+            var sut = new PlayerCharacter();
+
+
+            // Act
+
+            sut.TakeDamage(damage);
+
+
+            // Assert
+
+            Assert.AreEqual(expectedResult, sut.Health);
+
+        }
+
+
 
 
         // 08/26/2021 09:37 am - SSN - [20210826-0925] - [003] - M03-04 - Asserting numeric results
