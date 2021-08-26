@@ -6,7 +6,7 @@ using System.Text;
 
 // 08/26/2021 10:02 am - SSN - [20210826-0958] - [001] - M03-05 - Asserting on double values with delta
 
-namespace GameEngne.Tests
+namespace GameEngine.Tests
 {
     [TestClass]
     public class BossEnemyShould

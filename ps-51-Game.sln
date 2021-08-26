@@ -4,7 +4,7 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameEngine", "GameEngine\GameEngine.csproj", "{4AFC869A-D410-4410-9BF5-7F748F4BA2E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameEngne.Tests", "GameEngne.Tests\GameEngne.Tests.csproj", "{5D39F9D1-31A9-41E7-BA26-2808941F3583}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameEngine.Tests", "GameEngine.Tests\GameEngine.Tests.csproj", "{5D39F9D1-31A9-41E7-BA26-2808941F3583}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

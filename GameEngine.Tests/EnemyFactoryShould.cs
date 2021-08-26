@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 // 08/26/2021 12:21 pm - SSN - [20210826-1220] - [001] - M03-09 - Asserting that the correct exceptions are thrown
 
-namespace GameEngne.Tests
+namespace GameEngine.Tests
 {
     [TestClass]
     [TestCategory("Enemy creation")]
