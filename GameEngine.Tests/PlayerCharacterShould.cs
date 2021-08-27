@@ -146,7 +146,8 @@ namespace GameEngine.Tests
         // [DynamicData(nameof(Damages_SampleData))]
         // [DynamicData(nameof(Damages_SampleData_v2),DynamicDataSourceType.Method)]
         // [DynamicData(nameof(DamageTestData.GetTestData), typeof(DamageTestData), DynamicDataSourceType.Method)]
-        [DynamicData(nameof(ExternalHealthDamageTestData.GetTestData), typeof(ExternalHealthDamageTestData))]
+        // [DynamicData(nameof(ExternalHealthDamageTestData.GetTestData), typeof(ExternalHealthDamageTestData))]
+        [CsvDataSource("Damages_test_data.csv")]
 
         // [TestCategory("Player health")]
         [PlayerHealthCategory]
