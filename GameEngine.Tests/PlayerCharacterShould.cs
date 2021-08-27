@@ -469,6 +469,14 @@ namespace GameEngine.Tests
 
         }
 
+        [TestMethod]
+        public void HaveAtLeastOneKindOfSword_v2()
+        {
+            //Assert.IsTrue(sut.Weapons.Any(weapon => weapon.ToLower().Contains("sword")));
+            CollectionAssert.That.AtLeastOneItemSatisfies(sut.Weapons, weapon => weapon.ToLower().Contains("sword"));
+
+        }
+
 
         // 08/26/2021 12:08 pm - SSN - [20210826-1149] - [006] - M03-07 - Specialized string assertions
         [TestMethod]
@@ -485,6 +493,26 @@ namespace GameEngine.Tests
             // Assert
 
             Assert.IsFalse(sut.Weapons.Any(weapon => string.IsNullOrWhiteSpace(weapon)));
+
+        }
+
+
+        [TestMethod]
+        public void HaveNoEmptyDefaultWeapons_v2()
+        {
+            CollectionAssert.That.AllItemsNotNullOrWhiteSpace(sut.Weapons);
+
+            CollectionAssert.That.AllItemsSatisfy(sut.Weapons, (weapon) => !string.IsNullOrWhiteSpace(weapon));
+
+            //sut.Weapons.Add(" ");
+            //sut.Weapons.Add("Aa");
+
+            CollectionAssert.That.All ( sut.Weapons , weapon =>  {
+
+                StringAssert.That.NotNullOrWhiteSpace(weapon);
+                Assert.IsTrue(weapon.Length > 5, $"Weapon length [{weapon.Length}] is less than 5 characters.");
+
+            });
 
         }
 
