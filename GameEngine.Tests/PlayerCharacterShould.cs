@@ -186,7 +186,7 @@ namespace GameEngine.Tests
 
         [TestMethod]
         [TestCategory("Player health")]
-        public void IncreaseHealthAfterSleeping()
+        public void IncreaseHealthAfterSleeping_v1()
         {
 
 
@@ -212,6 +212,41 @@ namespace GameEngine.Tests
 
                 // Assert.IsTrue(sut.Health >= 101 && sut.Health <= 200, $"Health final value {sut.Health}");
                 Assert.IsTrue(sut.Health >= minLimit && sut.Health <= maxLimit, $"Health final value {sut.Health}");
+
+            }
+
+            Assert.AreEqual(testCount, counter, $"Ran test {testCount} times.");
+
+        }
+
+
+        // 08/27/2021 04:23 am - SSN - [20210827-0415] - [002] - M06-03 - Creating custom numeric assert
+
+        [TestMethod]
+        [TestCategory("Player health")]
+        public void IncreaseHealthAfterSleeping_v2()
+        {
+
+
+            // Arrange
+
+
+            int testCount = 1000;
+            int counter = 0;
+
+            while (++counter < testCount)
+            {
+
+                // Act
+                var minLimit = sut.Health;
+                var maxLimit = minLimit + 100;
+
+                sut.Sleep();
+
+
+                // Assert
+
+                Assert.That.IsInRange(sut.Health, minLimit, maxLimit);
 
             }
 
