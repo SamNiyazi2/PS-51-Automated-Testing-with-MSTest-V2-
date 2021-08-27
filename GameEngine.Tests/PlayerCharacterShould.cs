@@ -12,13 +12,26 @@ namespace GameEngine.Tests
     [TestClass]
     public class PlayerCharacterShould
     {
+
+
+        // 08/27/2021 04:06 am - SSN - [20210827-0403] - [001] - M06-02 - Initial test code refactoring
+        PlayerCharacter sut;
+
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            sut = new PlayerCharacter();
+        }
+
+
+
         [TestMethod]
         [TestCategory("Player defaults")]
         // [Ignore("Testing Ignore attribute")]
         public void BeExperiencedWhenNew()
         {
 
-            var sut = new PlayerCharacter();
+            // var sut = new PlayerCharacter();
 
             Assert.IsTrue(sut.IsNoob);
 
@@ -30,7 +43,7 @@ namespace GameEngine.Tests
         public void NotHaveNickNameyDefault()
         {
 
-            var sut = new PlayerCharacter();
+            // var sut = new PlayerCharacter();
 
             Assert.IsNull(sut.Nickname);
 
@@ -46,7 +59,7 @@ namespace GameEngine.Tests
 
             // Arrange
 
-            var sut = new PlayerCharacter();
+            // var sut = new PlayerCharacter();
             var expectedValue = 100;
 
             // Act
@@ -68,7 +81,7 @@ namespace GameEngine.Tests
 
             // Arrange
 
-            var sut = new PlayerCharacter();
+            // var sut = new PlayerCharacter();
 
             var expectedResults = 99;
 
@@ -128,7 +141,7 @@ namespace GameEngine.Tests
 
             // Arrange
 
-            var sut = new PlayerCharacter();
+            // var sut = new PlayerCharacter();
 
 
             // Act
@@ -153,7 +166,7 @@ namespace GameEngine.Tests
 
             // Arrange
 
-            var sut = new PlayerCharacter();
+            // var sut = new PlayerCharacter();
             var notExpectedResult = 100;
 
             // Act
@@ -179,7 +192,7 @@ namespace GameEngine.Tests
 
             // Arrange
 
-            var sut = new PlayerCharacter();
+            // var sut = new PlayerCharacter();
 
 
             int testCount = 1000;
@@ -216,7 +229,7 @@ namespace GameEngine.Tests
 
             // Arrange
 
-            var sut = new PlayerCharacter();
+            // var sut = new PlayerCharacter();
 
             sut.FirstName = "Sarah";
             sut.LastName = "Smith";
@@ -246,7 +259,7 @@ namespace GameEngine.Tests
 
             // Arrange
 
-            var sut = new PlayerCharacter();
+            // var sut = new PlayerCharacter();
             sut.FirstName = "Sarah";
             sut.LastName = "Smith";
 
@@ -269,7 +282,7 @@ namespace GameEngine.Tests
 
             // Arrange
 
-            var sut = new PlayerCharacter();
+            // var sut = new PlayerCharacter();
             sut.FirstName = "Sarah";
             sut.LastName = "Smith";
 
@@ -293,7 +306,7 @@ namespace GameEngine.Tests
 
             // Arrange
 
-            var sut = new PlayerCharacter();
+            // var sut = new PlayerCharacter();
 
             sut.FirstName = "Sarah";
             sut.LastName = "Smith";
@@ -316,7 +329,7 @@ namespace GameEngine.Tests
 
             // Arrange
 
-            var sut = new PlayerCharacter();
+            // var sut = new PlayerCharacter();
 
 
             // Act
@@ -336,7 +349,7 @@ namespace GameEngine.Tests
 
             // Arrange
 
-            var sut = new PlayerCharacter();
+            // var sut = new PlayerCharacter();
 
             var expectedWeapons = new[]
             {
@@ -362,7 +375,7 @@ namespace GameEngine.Tests
 
             // Arrange
 
-            var sut = new PlayerCharacter();
+            // var sut = new PlayerCharacter();
 
             var expectedWeapons = new[]
             {
@@ -391,7 +404,7 @@ namespace GameEngine.Tests
 
             // Arrange
 
-            var sut = new PlayerCharacter();
+            // var sut = new PlayerCharacter();
 
 
             // Act
@@ -410,7 +423,7 @@ namespace GameEngine.Tests
 
             // Arrange
 
-            var sut = new PlayerCharacter();
+            // var sut = new PlayerCharacter();
 
             // Act
 
@@ -429,7 +442,7 @@ namespace GameEngine.Tests
 
             // Arrange
 
-            var sut = new PlayerCharacter();
+            // var sut = new PlayerCharacter();
 
             // Act
 
