@@ -26,7 +26,10 @@ namespace GameEngine.Tests
 
 
         [TestMethod]
-        [TestCategory("Player defaults")]
+
+        // [TestCategory("Player defaults")]
+        [PlayerDefaultsCategory]
+
         // [Ignore("Testing Ignore attribute")]
         public void BeExperiencedWhenNew()
         {
@@ -38,7 +41,10 @@ namespace GameEngine.Tests
         }
 
         [TestMethod]
-        [TestCategory("Player defaults")]
+
+        // [TestCategory("Player defaults")]
+        [PlayerDefaultsCategory]
+
         // [Ignore("Testing Ignore attribute")]
         public void NotHaveNickNameyDefault()
         {
@@ -52,7 +58,10 @@ namespace GameEngine.Tests
 
         // 08/26/2021 09:26 am - SSN - [20210826-0925] - [001] - M03-04 - Asserting numeric results
         [TestMethod]
-        [TestCategory("Player defaults")]
+
+        // [TestCategory("Player defaults")]
+        [PlayerDefaultsCategory]
+
         public void StartWithDefaultHealth()
         {
 
@@ -75,7 +84,10 @@ namespace GameEngine.Tests
         // 08/26/2021 09:32 am - SSN - [20210826-0925] - [002] - M03-04 - Asserting numeric results
 
         [TestMethod]
-        [TestCategory("Player health")]
+
+        // [TestCategory("Player health")]
+        [PlayerHealthCategory]
+
         public void TakeDamage_v1()
         {
 
@@ -135,7 +147,10 @@ namespace GameEngine.Tests
         // [DynamicData(nameof(Damages_SampleData_v2),DynamicDataSourceType.Method)]
         // [DynamicData(nameof(DamageTestData.GetTestData), typeof(DamageTestData), DynamicDataSourceType.Method)]
         [DynamicData(nameof(ExternalHealthDamageTestData.GetTestData), typeof(ExternalHealthDamageTestData))]
-        [TestCategory("Player health")]
+
+        // [TestCategory("Player health")]
+        [PlayerHealthCategory]
+
         public void TakeDamage_v2(int damage, int expectedResult)
         {
 
@@ -160,7 +175,10 @@ namespace GameEngine.Tests
 
         // 08/26/2021 09:37 am - SSN - [20210826-0925] - [003] - M03-04 - Asserting numeric results
         [TestMethod]
-        [TestCategory("Player health")]
+
+        // [TestCategory("Player health")]
+        [PlayerHealthCategory]
+
         public void TakeDamage_NotEqual()
         {
 
@@ -185,7 +203,10 @@ namespace GameEngine.Tests
         // 08/26/2021 09:44 am - SSN - [20210826-0925] - [004] - M03-04 - Asserting numeric results
 
         [TestMethod]
-        [TestCategory("Player health")]
+
+        // [TestCategory("Player health")]
+        [PlayerHealthCategory]
+
         public void IncreaseHealthAfterSleeping_v1()
         {
 
@@ -223,7 +244,10 @@ namespace GameEngine.Tests
         // 08/27/2021 04:23 am - SSN - [20210827-0415] - [002] - M06-03 - Creating custom numeric assert
 
         [TestMethod]
-        [TestCategory("Player health")]
+
+        // [TestCategory("Player health")]
+        [PlayerHealthCategory]
+
         public void IncreaseHealthAfterSleeping_v2()
         {
 
@@ -507,7 +531,8 @@ namespace GameEngine.Tests
             //sut.Weapons.Add(" ");
             //sut.Weapons.Add("Aa");
 
-            CollectionAssert.That.All ( sut.Weapons , weapon =>  {
+            CollectionAssert.That.All(sut.Weapons, weapon =>
+            {
 
                 StringAssert.That.NotNullOrWhiteSpace(weapon);
                 Assert.IsTrue(weapon.Length > 5, $"Weapon length [{weapon.Length}] is less than 5 characters.");

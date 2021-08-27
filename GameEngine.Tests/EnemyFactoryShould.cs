@@ -8,7 +8,10 @@ using System.Threading.Tasks;
 namespace GameEngine.Tests
 {
     [TestClass]
-    [TestCategory("Enemy creation")]
+
+    //[TestCategory("Enemy creation")]
+    [EnemyCreationCategory]
+
     public class EnemyFactoryShould
     {
 
